@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+        "-//Checkstyle//DTD Checkstyle Configuration 1.3//EN"
+        "https://checkstyle.org/dtds/configuration_1_3.dtd">
+<module name="Checker">
+    <module name="TreeWalker">
+        <!--        <module name="FieldsCountCheck"/>-->
+        <!--        <module name="MethodEmptyLines"/>-->
+        <!--        <module name="MethodParameterAlignment"/>-->
+        <!--        <module name="MethodParameterLines"/>-->
+        <!--        <module name="MethodCallParameterAlignment"/>-->
+        <!--        <module name="MethodCallParameterLines">-->
+        <!--            <property name="ignoreMethods" value="Map.of"/>-->
+        <!--        </module>-->
+
+<!--        This should check that old style switch had default, but new-style (expression) (->) switch does nto require it-->
+        <module name="MissingSwitchDefault"/>
+    </module>
+</module>
