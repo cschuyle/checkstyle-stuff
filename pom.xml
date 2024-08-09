@@ -12,8 +12,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- If you don't specify this in properties Checkstyle doesn't see it. -->
-        <checkstyle.config.location>my-checkstyle.xml</checkstyle.config.location>
+        <!-- You can specify this here in properties if you want -->
+        <!--        <checkstyle.config.location>my-checkstyle.xml</checkstyle.config.location>-->
     </properties>
 
     <repositories>
@@ -49,6 +49,16 @@
                     <target>14</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.4.0</version>
+                <configuration>
+                    <!-- Checkstyle will see this config if you specify it in the build/plugins section - not reporting/plugins.
+                         Alternatively, you can put it in properties. See above comment. -->
+                    <configLocation>my-checkstyle.xml</configLocation>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -63,15 +73,6 @@
 
     <reporting>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.4.0</version>
-                <configuration>
-                    <!-- See above - I resorted to specifying the location in properties. -->
-                    <configLocation>my-checkstyle.xml</configLocation>
-                </configuration>
-            </plugin>
         </plugins>
     </reporting>
 </project>
